@@ -1,0 +1,17 @@
+namespace: flask-dashed
+flask-dashed:
+  defines: runnable
+  metadata:
+    name: flask-dashed
+    description: A package that provides a way to easily build admin apps in Flask.
+    icon: https://emojiapi.dev/api/v1/robot.svg
+  containers:
+    flask-dashed:
+      build: .
+  services:
+    flask-dashed-5000-tcp:
+      container: flask-dashed
+      port: 5000
+      host-port: 5000
+      publish: false
+      protocol: TCP
